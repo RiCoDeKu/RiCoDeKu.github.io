@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Riku Yamaguchi's Homepage</title>
+    <meta
+      name="keywords"
+      content="Riku Yamaguchi, software engineer, portfolio"
+    />
+    <meta
+      name="description"
+      content="This is the personal website of Riku Yamaguchi, a software engineer."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="alternate" hreflang="ja" href="index.html" />
+    <link rel="alternate" hreflang="en" href="index-en.html" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="src/favicon.ico" />
+    <style>
+      @font-face {
+        font-family: "SiteSans";
+        src: url("fonts/NotoSansJP-VariableFont_wght.ttf") format("truetype");
+        unicode-range:
+          U+3000-303F, U+3040-30FF, U+31F0-31FF, U+3400-4DBF, U+4E00-9FFF,
+          U+F900-FAFF, U+FF00-FFEF;
+        font-weight: 100 900;
+      }
+      @font-face {
+        font-family: "SiteSans";
+        src: url("fonts/Roboto-VariableFont_wdth,wght.ttf") format("truetype");
+        font-weight: 100 900;
+      }
+      body {
+        font-family: "SiteSans", sans-serif;
+        min-width: 320px;
+      }
+      img {
+        height: auto;
+        max-width: 100%;
+      }
+      #researches {
+        scroll-margin-top: 6rem;
+      }
+      .slide-frame {
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        position: relative;
+        width: min(100%, 960px);
+      }
+      .slide-frame.is-loaded {
+        padding: 0;
+      }
+      .slide-placeholder {
+        min-height: 180px;
+      }
+      .slide-loading {
+        align-items: center;
+        color: #4b5563;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        height: 100%;
+        justify-content: center;
+        width: 100%;
+      }
+      .slide-spinner {
+        animation: slide-spin 0.8s linear infinite;
+        border: 4px solid #e5e7eb;
+        border-radius: 9999px;
+        border-top-color: #374151;
+        display: block;
+        height: 2.5rem;
+        width: 2.5rem;
+      }
+      .slide-iframe {
+        border: 0;
+        height: 100%;
+        width: 100%;
+      }
+      .slide-iframe.is-hidden {
+        inset: 0;
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+      }
+      @keyframes slide-spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+    <script src="index.js"></script>
+  </head>
+  <body class="bg-white text-gray-800">
+    <!-- Header -->
+    <header class="fixed top-0 z-20 w-full border-b bg-white px-3">
+      <div
+        class="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-2 py-2 sm:justify-between"
+      >
+        <div class="flex items-center space-x-2">
+          <img
+            src="https://github.com/RiCoDeKu.png"
+            alt="Profile Picture"
+            class="h-7 w-7 rounded-full"
+          />
+          <span class="text-base font-bold select-none"
+            ><a
+              href="#"
+              class="hover:text-gray-600 transition transition-colors duration-250"
+              >RiCoDeKu</a
+            ></span
+          >
+        </div>
+        <nav class="w-full sm:w-auto">
+          <ul
+            class="flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm sm:text-base"
+          >
+            <li>
+              <a href="#activities" class="text-gray-700 hover:text-gray-900"
+                >Activities</a
+              >
+            </li>
+            <li>
+              <a href="#researches" class="text-gray-700 hover:text-gray-900"
+                >Researches</a
+              >
+            </li>
+            <li>
+              <a href="#contact" class="text-gray-700 hover:text-gray-900"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html"
+                hreflang="ja"
+                lang="ja"
+                aria-label="日本語に切り替える"
+                class="inline-flex items-center rounded-full border border-gray-300 px-3 py-1 text-xs font-semibold text-gray-700 transition hover:border-gray-500 hover:text-gray-900 sm:text-sm"
+                >日本語</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="mx-auto w-full max-w-5xl px-4 pt-24 pb-8 sm:px-6 sm:pt-20">
+      <!-- Profile Card -->
+      <section class="w-full">
+        <div class="bg-white rounded-lg p-0 sm:p-4">
+          <div class="flex flex-col items-center">
+            <div
+              class="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left"
+            >
+              <img
+                src="src/selfie.png"
+                alt="Profile Picture"
+                class="h-28 w-28 flex-shrink-0 rounded-full select-none pointer-events-none sm:h-32 sm:w-32"
+              />
+              <div class="flex min-w-0 flex-col items-center sm:items-start">
+                <span class="text-xl font-bold leading-tight sm:text-2xl"
+                  >Riku Yamaguchi</span
+                >
+                <span
+                  class="mt-2 text-sm leading-relaxed text-gray-500 sm:text-base"
+                  >Master's Student, Department of Information and Computer
+                  Technology,</span
+                >
+                <span class="text-sm leading-relaxed text-gray-500 sm:text-base"
+                  >Graduate School of Engineering, Tokyo University of
+                  Science</span
+                >
+                <span class="text-sm leading-relaxed text-gray-500 sm:text-base"
+                  >Engineer at Cascade Inc. / Direct Inc.</span
+                >
+                <div
+                  class="flex flex-wrap justify-center gap-2 pt-3 sm:justify-start"
+                >
+                  <a
+                    href="https://github.com/RiCoDeKu"
+                    target="_blank"
+                    class="inline-flex h-9 w-9 items-center justify-center text-gray-500 transition duration-200 transform hover:scale-110 hover:text-gray-700"
+                  >
+                    <span
+                      role="img"
+                      aria-label="GitHub"
+                      class="inline-block h-5 w-5 bg-current"
+                      style="
+                        mask: url(&quot;https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg&quot;)
+                          no-repeat center / contain;
+                        -webkit-mask: url(&quot;https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg&quot;)
+                          no-repeat center / contain;
+                      "
+                    ></span>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/rikuyamaguchi/"
+                    target="_blank"
+                    class="inline-flex h-9 w-9 items-center justify-center text-gray-500 transition duration-200 transform hover:scale-110 hover:text-gray-700"
+                  >
+                    <span
+                      role="img"
+                      aria-label="LinkedIn"
+                      class="inline-block h-5 w-5 bg-current"
+                      style="
+                        mask: url(&quot;https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg&quot;)
+                          no-repeat center / contain;
+                        -webkit-mask: url(&quot;https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg&quot;)
+                          no-repeat center / contain;
+                      "
+                    ></span>
+                  </a>
+                  <a
+                    href="https://m.facebook.com/profile.php?id=61573465620767"
+                    target="_blank"
+                    class="inline-flex h-9 w-9 items-center justify-center text-gray-500 transition duration-200 transform hover:scale-110 hover:text-gray-700"
+                  >
+                    <span
+                      role="img"
+                      aria-label="Facebook"
+                      class="inline-block h-5 w-5 bg-current"
+                      style="
+                        mask: url(&quot;https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg&quot;)
+                          no-repeat center / contain;
+                        -webkit-mask: url(&quot;https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg&quot;)
+                          no-repeat center / contain;
+                      "
+                    ></span>
+                  </a>
+                  <a
+                    href="https://discord.gg/3sWJApcXs"
+                    target="_blank"
+                    class="inline-flex h-9 w-9 items-center justify-center text-gray-500 transition duration-200 transform hover:scale-110 hover:text-gray-700"
+                  >
+                    <span
+                      role="img"
+                      aria-label="Discord"
+                      class="inline-block h-5 w-5 bg-current"
+                      style="
+                        mask: url(&quot;https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg&quot;)
+                          no-repeat center / contain;
+                        -webkit-mask: url(&quot;https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg&quot;)
+                          no-repeat center / contain;
+                      "
+                    ></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <p
+              class="mt-4 max-w-2xl text-center text-sm leading-relaxed text-gray-600 sm:text-base"
+            >
+              <span class="font-semibold italic mb-20"
+                >Building together makes things better than building
+                alone.</span
+              ><br />
+              I value this mindset in my work as a student engineer.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Activities -->
+      <section class="mt-8 w-full" id="activities">
+        <div class="bg-white rounded-lg p-0 sm:p-4">
+          <div class="flex flex-col items-center">
+            <h2 class="mb-3 text-xl font-bold sm:text-2xl">Activities</h2>
+            <div class="grid w-full grid-cols-1 gap-4 lg:grid-cols-2">
+              <!-- Content1 -->
+              <a
+                href="https://www.linkedin.com/posts/microsoft_%E5%AD%A6%E7%94%9F%E7%94%9F%E6%B4%BB-copilot-pcmeet-my-copilot-activity-7295260629286694912-FeIK/?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAFS6I1QBQEdB3CRS8GY9El_VUX53Cn926Bw"
+                class="block rounded-lg bg-gray-100 p-4 text-sm leading-relaxed transition-shadow hover:shadow-lg sm:p-5 sm:text-base"
+              >
+                <div class="flex justify-center items-center pb-2">
+                  <img
+                    src="https://res.cloudinary.com/prairie-production/image/fetch/s--8pFRIs9L--/c_scale,f_webp,q_auto,w_1125/https://cdn.prairie.cards/2026/03/a7ni-syidxalp-znteoi5?_a=BACE6GDL"
+                    alt="Student Life x Copilot+ PC | Meet my Copilot"
+                    class="mx-auto w-96 h-64 object-cover max-w-sm rounded-xl pointer-events-none"
+                  />
+                </div>
+                <span class="block pb-2 font-semibold leading-snug"
+                  >Student Life x Copilot+ PC | Meet my Copilot |
+                  Microsoft</span
+                >
+                In "Meet my Copilot," I was featured for using Copilot on a
+                Copilot+ PC to make student life more efficient and
+                fulfilling.<br />
+
+                As an information engineering student, I use Copilot to
+                summarize research papers. For coursework reports and thesis
+                writing, I previously had to spend a long time reading more than
+                ten papers.<br />
+
+                Copilot helps summarize long papers into a more readable form,
+                which saves a significant amount of time.
+              </a>
+              <!-- Content2 -->
+              <a
+                href="https://blogs.windows.com/japan/2025/01/08/surface-ambassadors-students-spreading-surface-love-nationwide/"
+                class="block rounded-lg bg-gray-100 p-4 text-sm leading-relaxed transition-shadow hover:shadow-lg sm:p-5 sm:text-base"
+              >
+                <div class="flex justify-center items-center pb-2">
+                  <img
+                    src="https://res.cloudinary.com/prairie-production/image/fetch/s--Y4OCOXsH--/c_scale,f_webp,q_auto,w_1125/https://cdn.prairie.cards/2026/03/r7ikyr3rjwzhrjz9-nsy5?_a=BACE6GDL"
+                    alt="Surface Ambassadors"
+                    class="mx-auto w-96 h-64 object-cover max-w-sm rounded-xl pointer-events-none"
+                  />
+                </div>
+                <span class="block pb-2 font-semibold leading-snug"
+                  >Surface Ambassadors: Students Spreading Surface Love
+                  Nationwide</span
+                >
+                Surface devices from Microsoft are used by many companies and
+                educational institutions. This article introduces the Surface
+                Ambassador Meeting, a student activity held at universities
+                affiliated with university co-ops to promote better PC use in
+                campus life.
+              </a>
+              <!-- Content3 -->
+              <a
+                href="https://gakuseishinbun.jp/2025/04/04/surface-%E3%82%BD%E3%83%BC%E3%82%B7%E3%83%A3%E3%83%AB%E5%8B%95%E7%94%BB%E3%82%B3%E3%83%B3%E3%83%86%E3%82%B9%E3%83%88/"
+                class="block rounded-lg bg-gray-100 p-4 text-sm leading-relaxed transition-shadow hover:shadow-lg sm:p-5 sm:text-base"
+              >
+                <div class="flex justify-center items-center pb-2">
+                  <img
+                    src="https://res.cloudinary.com/prairie-production/image/fetch/s--FQYQsVzk--/c_scale,f_webp,q_auto,w_1125/https://cdn.prairie.cards/2026/03/mpwzyhnlyhgkvb2qzrsve?_a=BACE6GDL"
+                    alt="Surface Social Video Contest"
+                    class="mx-auto w-96 h-64 object-cover max-w-sm rounded-xl pointer-events-none"
+                  />
+                </div>
+                <span class="block pb-2 font-semibold leading-snug"
+                  >Surface Social Video Contest - Student Newspaper Online</span
+                >
+                On March 14, 2025, finalists gave presentations at Microsoft
+                Japan's Shinagawa office. This contest was organized as a place
+                for university students to fully demonstrate their creativity.
+              </a>
+              <!-- Content4 -->
+              <a
+                href="https://www.ite.or.jp/ken/paper/20260220tAoi/"
+                class="block rounded-lg bg-gray-100 p-4 text-sm leading-relaxed transition-shadow hover:shadow-lg sm:p-5 sm:text-base"
+              >
+                <div class="flex justify-center items-center pb-2">
+                  <img
+                    src="https://res.cloudinary.com/prairie-production/image/fetch/s--dyCT_Dmf--/c_scale,f_webp,q_auto,w_1125/https://cdn.prairie.cards/2026/03/sagi30uxz2tq8xlk-qsti?_a=BACE6GDL"
+                    alt="The Institute of Image Information and Television Engineers - Conference Presentation"
+                    class="mx-auto w-96 h-64 object-cover max-w-sm rounded-xl pointer-events-none"
+                  />
+                </div>
+                <span class="block pb-2 font-semibold leading-snug"
+                  >The Institute of Image Information and Television Engineers -
+                  Conference Presentation</span
+                >
+                Against the backdrop of labor shortages in manufacturing and
+                service industries, there is growing demand for automating skill
+                transfer and manual creation from work videos. Dense Video
+                Captioning (DVC), which generates work segments and
+                corresponding descriptions at the same time, is attracting
+                attention as a core technology.
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Researches -->
+      <section class="mt-8 w-full" id="researches">
+        <div class="bg-white rounded-lg p-0 sm:p-4">
+          <div class="flex flex-col items-center">
+            <h2 class="mb-3 text-xl font-bold sm:text-2xl">Researches</h2>
+            <div class="grid w-full grid-cols-1 gap-4">
+              <!-- Content1 -->
+              <article
+                class="block rounded-lg bg-gray-100 p-4 text-sm leading-relaxed transition-shadow hover:shadow-lg sm:p-5 sm:text-base"
+              >
+                <div class="flex justify-center items-center pb-2">
+                  <div
+                    class="slide-frame slide-placeholder flex items-center justify-center rounded-lg bg-white p-4 text-center"
+                    data-slide-src="https://1drv.ms/p/c/d9496d022beca510/IQS1HCr6UCePTZS-LUWM6xGyAayOGHld28ECVYUpV77fDpE?em=2&amp;wdAr=1.7777777777777777"
+                    data-slide-title="Undergraduate research presentation slide"
+                    data-slide-sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+                  >
+                    <button
+                      type="button"
+                      class="js-load-slide rounded-lg bg-gray-800 px-5 py-3 text-sm font-semibold text-white transition hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 sm:text-base"
+                    >
+                      Load slide
+                    </button>
+                  </div>
+                </div>
+                <span class="block pb-2 font-semibold leading-snug"
+                  >Undergraduate Research: Zero-shot Dense Video Captioning of
+                  Work Videos Using Hand-area Object Information and VLM</span
+                >
+                Against the backdrop of labor shortages in manufacturing and
+                service industries, there is a growing need to automate skill
+                transfer and manual creation from work videos. Dense Video
+                Captioning (DVC), which generates both work segments and
+                descriptions, is attracting attention as a core technology.
+                However, conventional DVC methods require large amounts of
+                supervised data, which limits practical use. Zero-shot methods
+                using Vision-Language Models (VLMs) can also produce incorrect
+                captions or over-segment scenes when fine hand motions and
+                nearby objects are difficult to see. This research proposes a
+                zero-shot DVC method that aggregates object-class information
+                around the hands over time and adds it to the VLM prompt as
+                semantic context. Experiments on cooking and assembly work video
+                datasets confirmed better caption quality and scene segmentation
+                accuracy than comparison methods.
+                <a
+                  href="https://www.ite.or.jp/ken/paper/20260220tAoi/"
+                  target="_blank"
+                  rel="noopener"
+                  class="mt-3 inline-flex text-sm font-semibold text-gray-700 underline hover:text-gray-900"
+                  >Open presentation page</a
+                >
+              </article>
+              <!-- Content2 -->
+              <article
+                class="block rounded-lg bg-gray-100 p-4 text-sm leading-relaxed transition-shadow hover:shadow-lg sm:p-5 sm:text-base"
+              >
+                <div class="flex justify-center items-center pb-2">
+                  <div
+                    class="slide-frame slide-placeholder flex items-center justify-center rounded-lg bg-white p-4 text-center"
+                    data-slide-src="https://1drv.ms/p/c/d9496d022beca510/IQRcsSau9jnsR5BGPOoUrss3AU4m3gpwwkhhNqQR5zGRMYk?em=2&amp;wdAr=1.7777777777777777"
+                    data-slide-title="Master's research presentation slide"
+                  >
+                    <button
+                      type="button"
+                      class="js-load-slide rounded-lg bg-gray-800 px-5 py-3 text-sm font-semibold text-white transition hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 sm:text-base"
+                    >
+                      Load slide
+                    </button>
+                  </div>
+                </div>
+                <span class="block pb-2 font-semibold leading-snug"
+                  >Master's Research: Motion Comic Generation by Adapting Video
+                  Generation Models to Manga Panel Images</span
+                >
+                Diffusion-based Image-to-Video (I2V) technology is making it
+                possible to generate video from still images. In this research,
+                I evaluate whether pretrained I2V models can be applied to manga
+                panel images and examine how manga-specific expressions, such as
+                speech balloons, sound-effect text, and speed lines, affect I2V
+                generation. Removing manga-specific expressions reduced
+                unnatural motion, and letterbox padding improved movement
+                expressions that use speed lines.
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact -->
+      <section class="mt-8 w-full" id="contact">
+        <div class="bg-white rounded-lg p-0 sm:p-4">
+          <div class="flex flex-col items-center">
+            <h2 class="mb-3 text-xl font-bold sm:text-2xl">Contact</h2>
+            <p
+              class="max-w-2xl text-center text-sm leading-relaxed text-gray-600 sm:text-base"
+            >
+              Please contact me at the email address below.
+            </p>
+            <a
+              href="mailto:riku.yamaguchi@outlook.com"
+              class="mt-4 inline-block rounded-lg px-5 py-3 text-sm font-semibold transition hover:underline sm:text-base"
+            >
+              Email:
+              <span class="font-semibold">riku.yamaguchi@outlook.com</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full border-t-2 border-gray-300 bg-white">
+      <div
+        class="mx-auto max-w-5xl px-4 py-3 text-center text-xs text-gray-400 select-none"
+      >
+        © <span id="year"></span> Riku Yamaguchi
+      </div>
+    </footer>
+  </body>
+</html>
